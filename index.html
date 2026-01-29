@@ -1,1 +1,2128 @@
-arvian
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1E1E1E">
+    <meta name="description" content="Arvian Motor - Solusi Cepat Kode Kerusakan Motor Injeksi">
+    <title>Arvian Motor - Kode Kerusakan FI</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFydmlhbiBNb3RvciIsCiAgInNob3J0X25hbWUiOiAiQXJ2aWFuIiwKICAic3RhcnRfdXJsIjogIi4vIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMUUxRTFFIiwKICAidGhlbWVfY29sb3IiOiAiIzFFMUUxRSIsCiAgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTVRJNElpQm9aV2xuYUhROUlqRXlPQ0lnZG1sbGQwSnZlRDBpTUNBd0lERXlPQ0F4TWpnaUlIaHRiRzV6UFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eU1EQXdMM04yWnlJK1BHUmxabk0rUEd4cGJtVmhja2R5WVdScFpXNTBJR2xrUFNKbmNtRmtJaUI0TVQwaU1DVWlJSGt4UFNJd0pTSWdlREk5SWpBbElpQjVNajBpTVRBd0pTSStQSE4wYjNBZ2IyWm1jMlYwUFNJd0pTSWdjM1I1YkdVOUluTjBiM0F0WTI5c2IzSTZJMFZPTkRFeE9DaThMM04wYjNBK1BITjBiM0FnYjJabWMyVjBQU0l4TURBbElpQnpkSGxzWlQwaWMzUnZjQzFqYjJ4dmNqb2pNVVV4UlRGRklqNDhMM04wYjNBK1BDOXNhVzVsWVhKSGNtRmthV1Z1ZEQ0OEwyUmxabk0rUEhKbFkzUWdlRDBpTXpZaUlIazlJak0ySWlCM2FXUjBhRDBpTlRZaUlHaGxhV2RvZEQwaU5UWWlJR1pwYkd3OUluVnliQ2duSTJkeVlXUW5LU0l2UGp4d1lYUm9JR1E5SWsweU5DQTJORXd4TURRZ05qUk1NVEE0SURZNFRERXdOQ0E0TkV3eU5DQTRORW9pSUdacGJHdzlJaU5GTkRReE1UZ2lMejQ4ZEdWNGRDQjRQU0kyTkNJZ2VUMGlOalFpSUdacGJHdzlJaU5HUmtaR1JrWWlJR1p2Ym5RdFptRnRhV3g1UFNKQmNtbGhiQ3dnYzJGdWN5MXpaWEpwWmlJZ1ptOXVkQzF6YVhwbFBTSXlOQ0lnZEdWNGRDMWhibU5vYjNJOUltMXBaR1JzWlNJK1FUd3ZkR1Y0ZEQ0OGRHVjRkQ0I0UFNJMk5DSWdlVDBpT1RZaUlHWnBiR3c5SWlOR1JrWkdSa1lpSUdadmJuUXRabUZ0YVd4NVBTSkJjbWxoYkN3Z2MyRnVjeTF6WlhKcFppSWdabTl1ZEMxemFYcGxQU0l4TWlJZ2RHVjRkQzFoYm1Ob2IzSTlJbTFwWkdSc1pTSStUVTlVVDFJOEwzUmxlSFErUEM5emRtYysiLAogICAgICAic2l6ZXMiOiAiMTI4eDEyOCIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9CiAgXQp9">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1E1E1E;
+            --secondary: #E84118;
+            --background: #2C2C2C;
+            --accent: #FFFFFF;
+            --card-bg: #383838;
+            --border: #4a4a4a;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B8B8B8;
+            --success: #10ac84;
+            --warning: #feca57;
+            --premium: #FFD700;
+        }
+        
+        [data-theme="light"] {
+            --primary: #FFFFFF;
+            --secondary: #E84118;
+            --background: #F5F5F5;
+            --accent: #1E1E1E;
+            --card-bg: #FFFFFF;
+            --border: #E0E0E0;
+            --text-primary: #1E1E1E;
+            --text-secondary: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            padding-bottom: 80px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 0.5s ease 2.5s forwards;
+        }
+        
+        .splash-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            text-shadow: 0 0 30px rgba(232, 65, 24, 0.8);
+            margin-bottom: 1rem;
+            animation: pulse 1.5s ease-in-out infinite;
+            letter-spacing: 3px;
+        }
+        
+        .splash-tagline {
+            font-size: 1rem;
+            color: var(--accent);
+            opacity: 0.9;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        
+        .splash-spinner {
+            margin-top: 2rem;
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top: 4px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--secondary) 0%, #c23616 100%);
+            padding: 1.5rem 1rem;
+            box-shadow: 0 4px 20px rgba(232, 65, 24, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-logo-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .header-logo-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 5px;
+        }
+        
+        .header-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+            margin: 0;
+        }
+        
+        .header-subtitle {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .user-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--premium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .premium-badge {
+            background: linear-gradient(135deg, var(--premium) 0%, #FFA500 100%);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        
+        /* Login/Register Modal */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 9998;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .auth-modal.active {
+            display: flex;
+        }
+        
+        .auth-container {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s ease;
+        }
+        
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .auth-header h2 {
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .auth-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 0.75rem;
+            background: transparent;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .auth-tab.active {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--accent);
+        }
+        
+        .auth-form {
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: var(--background);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 15px rgba(232, 65, 24, 0.3);
+        }
+        
+        .auth-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, #c23616 100%);
+            color: var(--accent);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(232, 65, 24, 0.3);
+        }
+        
+        .auth-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(232, 65, 24, 0.5);
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .close-auth {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .close-auth:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+        
+        /* Premium Features Lock */
+        .premium-lock {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-lock::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(232, 65, 24, 0.8) 100%);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .premium-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 11;
+            width: 100%;
+            padding: 2rem;
+        }
+        
+        .premium-overlay i {
+            font-size: 3rem;
+            color: var(--premium);
+            margin-bottom: 1rem;
+        }
+        
+        .premium-overlay h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .premium-overlay p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .upgrade-btn {
+            background: linear-gradient(135deg, var(--premium) 0%, #FFA500 100%);
+            color: var(--primary);
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .upgrade-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+        }
+        
+        /* Pricing Cards */
+        .pricing-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--premium);
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .pricing-card.featured::before {
+            content: 'PALING POPULER';
+            position: absolute;
+            top: 1rem;
+            right: -2rem;
+            background: var(--premium);
+            color: var(--primary);
+            padding: 0.5rem 3rem;
+            transform: rotate(45deg);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(232, 65, 24, 0.4);
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .plan-price small {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .plan-features li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .plan-features li i {
+            color: var(--success);
+        }
+        
+        .plan-features li.disabled {
+            opacity: 0.4;
+        }
+        
+        .plan-features li.disabled i {
+            color: var(--text-secondary);
+        }
+        
+        .subscribe-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, #c23616 100%);
+            color: var(--accent);
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card.featured .subscribe-btn {
+            background: linear-gradient(135deg, var(--premium) 0%, #FFA500 100%);
+            color: var(--primary);
+        }
+        
+        /* Main Container */
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            animation: slideUp 0.6s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Page */
+        .page {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Brand Selection Cards */
+        .brand-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(232, 65, 24, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .brand-card:hover::before {
+            left: 100%;
+        }
+        
+        .brand-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(232, 65, 24, 0.4);
+        }
+        
+        .brand-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .brand-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Quick Action Buttons */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .quick-btn {
+            background: linear-gradient(135deg, var(--secondary) 0%, #c23616 100%);
+            color: var(--accent);
+            border: none;
+            padding: 1.2rem;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(232, 65, 24, 0.3);
+        }
+        
+        .quick-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(232, 65, 24, 0.5);
+        }
+        
+        .quick-btn i {
+            display: block;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 2rem;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1.5rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 20px rgba(232, 65, 24, 0.3);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+        
+        /* Filter Buttons */
+        .filter-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+        
+        .filter-container::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .filter-container::-webkit-scrollbar-track {
+            background: var(--card-bg);
+        }
+        
+        .filter-container::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border-radius: 25px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--accent);
+        }
+        
+        .filter-btn:hover {
+            border-color: var(--secondary);
+        }
+        
+        /* Error Code Cards */
+        .error-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .error-card:hover {
+            border-color: var(--secondary);
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(232, 65, 24, 0.3);
+        }
+        
+        .error-code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+        
+        .error-code-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .favorite-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .favorite-btn.active {
+            color: var(--warning);
+            animation: heartBeat 0.3s;
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.3); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .error-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .error-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(232, 65, 24, 0.2);
+            color: var(--secondary);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Expanded Details */
+        .error-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-top: 0;
+        }
+        
+        .error-details.expanded {
+            max-height: 1000px;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+        
+        .detail-section {
+            margin-bottom: 1rem;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .detail-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .detail-content ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            border-top: 2px solid var(--border);
+            display: flex;
+            justify-content: space-around;
+            padding: 0.8rem 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+        
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: all 0.3s;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+        }
+        
+        .nav-item:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-item.active {
+            color: var(--secondary);
+        }
+        
+        .nav-item i {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        .nav-item span {
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* Toast Notification */
+        .toast-container {
+            position: fixed;
+            top: 80px;
+            right: 1rem;
+            z-index: 1000;
+        }
+        
+        .toast-notification {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            border-left: 4px solid var(--secondary);
+            margin-bottom: 0.5rem;
+            animation: slideInRight 0.3s ease;
+            max-width: 300px;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .empty-state h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .empty-state p {
+            color: var(--text-secondary);
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--border);
+        }
+        
+        .about-section h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .about-section p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary) 0%, #c23616 100%);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+        
+        /* Tutorial Video Cards */
+        .tutorial-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .tutorial-card:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 5px 20px rgba(232, 65, 24, 0.3);
+        }
+        
+        .tutorial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tutorial-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+        
+        .tutorial-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .tutorial-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, #c23616 100%);
+            color: var(--accent);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(232, 65, 24, 0.3);
+        }
+        
+        .tutorial-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(232, 65, 24, 0.5);
+            color: var(--accent);
+        }
+        
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 576px) {
+            .splash-logo {
+                font-size: 2.5rem;
+            }
+            
+            .header-title {
+                font-size: 1.4rem;
+            }
+            
+            .header-logo-container {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .brand-card {
+                padding: 1.5rem;
+            }
+            
+            .brand-icon {
+                font-size: 3rem;
+            }
+            
+            .user-info {
+                font-size: 0.85rem;
+            }
+            
+            .plan-price {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-logo">ARVIAN</div>
+        <div class="splash-tagline">Solusi Cepat Kode Kerusakan FI</div>
+        <div class="splash-spinner"></div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-container" style="position: relative;">
+            <button class="close-auth" onclick="closeAuthModal()">×</button>
+            
+            <div class="auth-header">
+                <h2>Selamat Datang</h2>
+                <p style="color: var(--text-secondary); margin: 0;">Masuk atau daftar untuk melanjutkan</p>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchAuthTab('login')">Masuk</button>
+                <button class="auth-tab" onclick="switchAuthTab('register')">Daftar</button>
+            </div>
+            
+            <!-- Login Form -->
+            <form class="auth-form active" id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="login-email" required placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" required placeholder="Masukkan password">
+                </div>
+                <button type="submit" class="auth-btn">
+                    <i class="fas fa-sign-in-alt"></i> Masuk
+                </button>
+            </form>
+            
+            <!-- Register Form -->
+            <form class="auth-form" id="register-form" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="register-name" required placeholder="Nama Anda">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="register-email" required placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="register-password" required placeholder="Minimal 6 karakter">
+                </div>
+                <button type="submit" class="auth-btn">
+                    <i class="fas fa-user-plus"></i> Daftar Sekarang
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                <small>Dengan mendaftar, Anda menyetujui syarat dan ketentuan kami</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <div class="header-logo-container">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23E84118' width='100' height='100'/%3E%3Ctext x='50' y='60' font-family='Arial' font-size='50' fill='white' text-anchor='middle' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E" alt="Arvian Motor Logo" class="header-logo">
+                </div>
+                <div>
+                    <h1 class="header-title">ARVIAN MOTOR</h1>
+                    <p class="header-subtitle">Kode Kerusakan FI</p>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div id="user-section"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Home Page -->
+        <div class="page active" id="home-page">
+            <h2 class="mb-4">Pilih Merek Motor</h2>
+            <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                    <div class="brand-card" onclick="loadBrandCodes('honda')">
+                        <i class="fas fa-motorcycle brand-icon"></i>
+                        <h3 class="brand-name">HONDA PGM-FI</h3>
+                        <p class="brand-desc">Kode kerusakan Honda Fuel Injection</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="brand-card" onclick="loadBrandCodes('yamaha')">
+                        <i class="fas fa-motorcycle brand-icon"></i>
+                        <h3 class="brand-name">YAMAHA FI</h3>
+                        <p class="brand-desc">Kode kerusakan Yamaha Fuel Injection</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mb-3">Aksi Cepat</h3>
+            <div class="quick-actions">
+                <button class="quick-btn" onclick="switchPage('search-page')">
+                    <i class="fas fa-search"></i>
+                    Cari Kode
+                </button>
+                <button class="quick-btn" onclick="switchPage('favorites-page')">
+                    <i class="fas fa-star"></i>
+                    Favorit
+                </button>
+            </div>
+
+            <!-- Tutorial Section -->
+            <h3 class="mb-3">Tutorial Reset Check Engine</h3>
+            <div class="tutorial-card">
+                <div class="tutorial-header">
+                    <i class="fab fa-youtube tutorial-icon"></i>
+                    <h4 class="tutorial-title">Honda PGM-FI</h4>
+                </div>
+                <p class="text-secondary mb-3">Panduan lengkap cara mereset lampu check engine Honda</p>
+                <a href="https://youtu.be/RWO1JxY0ySk?si=f8qosr9gEBzHlGaP" target="_blank" class="tutorial-link">
+                    <i class="fab fa-youtube"></i>
+                    Tonton Tutorial
+                </a>
+            </div>
+
+            <div class="tutorial-card">
+                <div class="tutorial-header">
+                    <i class="fab fa-youtube tutorial-icon"></i>
+                    <h4 class="tutorial-title">Yamaha FI</h4>
+                </div>
+                <p class="text-secondary mb-3">Panduan lengkap cara mereset lampu check engine Yamaha</p>
+                <a href="https://youtu.be/KnVEAE5sL20?si=clo4c6uMsu9aHEQn" target="_blank" class="tutorial-link">
+                    <i class="fab fa-youtube"></i>
+                    Tonton Tutorial
+                </a>
+            </div>
+        </div>
+
+        <!-- Search Page -->
+        <div class="page" id="search-page">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" class="search-input" id="search-input" placeholder="Cari kode error (contoh: 12, C12, sensor)...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+
+            <div class="filter-container" id="filter-container"></div>
+
+            <div id="search-results"></div>
+        </div>
+
+        <!-- Codes Page -->
+        <div class="page" id="codes-page">
+            <h2 class="mb-3" id="codes-brand-title">Kode Error</h2>
+            
+            <div class="filter-container" id="codes-filter-container"></div>
+            
+            <div id="codes-list"></div>
+        </div>
+
+        <!-- Favorites Page -->
+        <div class="page" id="favorites-page">
+            <h2 class="mb-4">Kode Favorit</h2>
+            <div id="favorites-list"></div>
+        </div>
+
+        <!-- Premium Page -->
+        <div class="page" id="premium-page">
+            <h2 class="mb-4 text-center">Pilih Paket Premium</h2>
+            <p class="text-center text-secondary mb-4">Dapatkan akses penuh ke semua fitur dan database lengkap</p>
+            
+            <div class="row g-4 mb-4">
+                <!-- Free Plan -->
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Gratis</h3>
+                        <div class="plan-price">Rp 0<small>/bulan</small></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> 10 pencarian per hari</li>
+                            <li><i class="fas fa-check-circle"></i> Database dasar (20 kode)</li>
+                            <li><i class="fas fa-check-circle"></i> 3 kode favorit</li>
+                            <li class="disabled"><i class="fas fa-times-circle"></i> Solusi lengkap</li>
+                            <li class="disabled"><i class="fas fa-times-circle"></i> Tutorial premium</li>
+                            <li class="disabled"><i class="fas fa-times-circle"></i> Support prioritas</li>
+                        </ul>
+                        <button class="subscribe-btn" disabled>Paket Aktif</button>
+                    </div>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="col-md-4">
+                    <div class="pricing-card featured">
+                        <h3 class="plan-name">Pro</h3>
+                        <div class="plan-price">Rp 99K<small>/bulan</small></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Pencarian unlimited</li>
+                            <li><i class="fas fa-check-circle"></i> Database lengkap (100+ kode)</li>
+                            <li><i class="fas fa-check-circle"></i> Favorit unlimited</li>
+                            <li><i class="fas fa-check-circle"></i> Solusi lengkap & detail</li>
+                            <li><i class="fas fa-check-circle"></i> 20+ tutorial premium</li>
+                            <li><i class="fas fa-check-circle"></i> Support via WhatsApp</li>
+                        </ul>
+                        <button class="subscribe-btn" onclick="subscribe('pro')">Berlangganan Sekarang</button>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Bengkel</h3>
+                        <div class="plan-price">Rp 299K<small>/bulan</small></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Semua fitur Pro</li>
+                            <li><i class="fas fa-check-circle"></i> 5 pengguna aktif</li>
+                            <li><i class="fas fa-check-circle"></i> History diagnosis</li>
+                            <li><i class="fas fa-check-circle"></i> Manajemen pelanggan</li>
+                            <li><i class="fas fa-check-circle"></i> Video call support</li>
+                            <li><i class="fas fa-check-circle"></i> Custom training</li>
+                        </ul>
+                        <button class="subscribe-btn" onclick="subscribe('enterprise')">Hubungi Sales</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">500+</div>
+                    <div class="stat-label">Mekanik Aktif</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">Kode Error</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Tutorial Video</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4.9/5</div>
+                    <div class="stat-label">Rating Pengguna</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div class="page" id="about-page">
+            <div class="about-section">
+                <h3><i class="fas fa-info-circle"></i> Tentang Aplikasi</h3>
+                <p>Arvian Motor adalah aplikasi panduan teknis untuk mekanik motor dalam menganalisis dan menangani kode kerusakan pada sistem injeksi motor Honda PGM-FI dan Yamaha FI.</p>
+            </div>
+
+            <div class="about-section">
+                <h3><i class="fas fa-wrench"></i> Fitur Utama</h3>
+                <ul class="text-secondary">
+                    <li>Database lengkap kode error Honda & Yamaha</li>
+                    <li>Pencarian cepat berdasarkan kode</li>
+                    <li>Filter berdasarkan kategori sistem</li>
+                    <li>Simpan kode favorit</li>
+                    <li>Mode gelap & terang</li>
+                    <li>Bekerja offline (PWA)</li>
+                    <li>Tutorial video reset check engine</li>
+                    <li>Sistem berlangganan premium</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h3><i class="fas fa-code-branch"></i> Versi Aplikasi</h3>
+                <p><span class="version-badge">v2.0.0 Premium</span></p>
+                <p class="text-secondary mt-2">© 2026 Arvian Motor. Dirancang untuk mekanik profesional.</p>
+            </div>
+
+            <div class="about-section">
+                <h3><i class="fab fa-youtube"></i> Tutorial Reset Check Engine</h3>
+                <p class="mb-3">Pelajari cara mereset lampu indikator check engine pada motor Anda:</p>
+                <div class="mb-3">
+                    <a href="https://youtu.be/RWO1JxY0ySk?si=f8qosr9gEBzHlGaP" target="_blank" class="tutorial-link">
+                        <i class="fab fa-youtube"></i>
+                        Tutorial Honda PGM-FI
+                    </a>
+                </div>
+                <div>
+                    <a href="https://youtu.be/KnVEAE5sL20?si=clo4c6uMsu9aHEQn" target="_blank" class="tutorial-link">
+                        <i class="fab fa-youtube"></i>
+                        Tutorial Yamaha FI
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" onclick="switchPage('home-page')">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+        </button>
+        <button class="nav-item" onclick="switchPage('search-page')">
+            <i class="fas fa-search"></i>
+            <span>Cari</span>
+        </button>
+        <button class="nav-item" onclick="switchPage('favorites-page')">
+            <i class="fas fa-star"></i>
+            <span>Favorit</span>
+        </button>
+        <button class="nav-item" onclick="switchPage('premium-page')">
+            <i class="fas fa-crown"></i>
+            <span>Premium</span>
+        </button>
+        <button class="nav-item" onclick="switchPage('about-page')">
+            <i class="fas fa-info-circle"></i>
+            <span>Tentang</span>
+        </button>
+    </nav>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Data Kode Error (Basic - untuk free tier)
+        const errorCodesBasic = {
+            honda: [
+                {
+                    code: "1",
+                    title: "MAP Sensor (Manifold Absolute Pressure)",
+                    category: "Sensor",
+                    cause: "Tegangan sensor terlalu rendah atau tinggi, kabel putus, ECM rusak",
+                    solution: ["Periksa konektor sensor MAP", "Cek tegangan di konektor (harus 5V)", "Periksa kabel dari sensor ke ECM", "Ganti sensor MAP jika rusak"],
+                    premium: false
+                },
+                {
+                    code: "12",
+                    title: "Injector Circuit",
+                    category: "Injektor",
+                    cause: "Injektor bahan bakar tidak bekerja, kabel putus, atau ECM rusak",
+                    solution: ["Upgrade ke Premium untuk solusi lengkap"],
+                    premium: true
+                }
+            ],
+            yamaha: [
+                {
+                    code: "11",
+                    title: "Intake Air Pressure Sensor (IAPS)",
+                    category: "Sensor",
+                    cause: "Sensor tekanan udara intake rusak atau koneksi buruk",
+                    solution: ["Periksa konektor sensor IAPS", "Cek selang vakum ke sensor", "Ukur tegangan output sensor", "Ganti sensor jika tidak sesuai spesifikasi"],
+                    premium: false
+                },
+                {
+                    code: "31",
+                    title: "Injector Circuit",
+                    category: "Injektor",
+                    cause: "Rangkaian injektor bermasalah atau injektor mampet",
+                    solution: ["Upgrade ke Premium untuk solusi lengkap"],
+                    premium: true
+                }
+            ]
+        };
+
+        // Full error codes for premium users
+        const errorCodesPremium = {
+            honda: [
+                {
+                    code: "1",
+                    title: "MAP Sensor (Manifold Absolute Pressure)",
+                    category: "Sensor",
+                    cause: "Tegangan sensor terlalu rendah atau tinggi, kabel putus, ECM rusak",
+                    solution: ["Periksa konektor sensor MAP", "Cek tegangan di konektor (harus 5V)", "Periksa kabel dari sensor ke ECM", "Ganti sensor MAP jika rusak"]
+                },
+                {
+                    code: "2",
+                    title: "MAP Sensor Circuit",
+                    category: "Sensor",
+                    cause: "Koneksi sensor MAP buruk, short circuit, atau ground tidak bagus",
+                    solution: ["Periksa konektor apakah longgar", "Cek kabel ground sensor", "Ukur resistansi kabel", "Bersihkan konektor dari korosi"]
+                },
+                {
+                    code: "5",
+                    title: "Engine Temperature Sensor (ECT)",
+                    category: "Sensor",
+                    cause: "Sensor suhu mesin rusak atau koneksi putus",
+                    solution: ["Periksa konektor sensor ECT", "Ukur resistansi sensor (sesuai spesifikasi)", "Cek kabel dari sensor ke ECM", "Ganti sensor jika nilai tidak sesuai"]
+                },
+                {
+                    code: "6",
+                    title: "ECT Sensor Circuit",
+                    category: "Sensor",
+                    cause: "Hubungan singkat pada rangkaian sensor suhu mesin",
+                    solution: ["Periksa kabel untuk short circuit", "Cek isolasi kabel yang rusak", "Periksa ground sensor", "Perbaiki atau ganti kabel jika perlu"]
+                },
+                {
+                    code: "7",
+                    title: "Throttle Position Sensor (TP)",
+                    category: "Sensor",
+                    cause: "Sensor posisi throttle tidak terkalibrasi atau rusak",
+                    solution: ["Kalibrasi ulang sensor TP", "Periksa konektor sensor", "Cek tegangan output sensor", "Ganti sensor jika output tidak stabil"]
+                },
+                {
+                    code: "12",
+                    title: "Injector Circuit",
+                    category: "Injektor",
+                    cause: "Injektor bahan bakar tidak bekerja, kabel putus, atau ECM rusak",
+                    solution: ["Periksa konektor injektor", "Ukur resistansi injektor (10-16 ohm)", "Cek relay pompa bahan bakar", "Bersihkan atau ganti injektor"]
+                },
+                {
+                    code: "15",
+                    title: "Ignition Coil",
+                    category: "Pengapian",
+                    cause: "Koil pengapian rusak atau koneksi buruk",
+                    solution: ["Periksa konektor koil", "Ukur resistansi primer dan sekunder koil", "Cek kabel dari ECM ke koil", "Ganti koil jika rusak"]
+                },
+                {
+                    code: "18",
+                    title: "Crankshaft Position Sensor (CKP)",
+                    category: "Sensor",
+                    cause: "Sensor posisi crankshaft tidak mendeteksi putaran mesin",
+                    solution: ["Periksa gap sensor CKP (0.5-1mm)", "Bersihkan sensor dari kotoran logam", "Cek kabel sensor", "Ganti sensor jika tidak ada sinyal"]
+                },
+                {
+                    code: "21",
+                    title: "Oxygen Sensor (O2)",
+                    category: "Sensor",
+                    cause: "Sensor oksigen tidak berfungsi atau terlalu lama mencapai suhu kerja",
+                    solution: ["Periksa sensor O2 setelah mesin panas", "Cek kabel sensor O2", "Ukur tegangan output sensor (0.1-0.9V)", "Ganti sensor jika tidak responsif"]
+                }
+            ],
+            yamaha: [
+                {
+                    code: "11",
+                    title: "Intake Air Pressure Sensor (IAPS)",
+                    category: "Sensor",
+                    cause: "Sensor tekanan udara intake rusak atau koneksi buruk",
+                    solution: ["Periksa konektor sensor IAPS", "Cek selang vakum ke sensor", "Ukur tegangan output sensor", "Ganti sensor jika tidak sesuai spesifikasi"]
+                },
+                {
+                    code: "12",
+                    title: "Intake Air Temperature Sensor (IATS)",
+                    category: "Sensor",
+                    cause: "Sensor suhu udara intake tidak berfungsi",
+                    solution: ["Periksa konektor sensor IATS", "Ukur resistansi sensor pada suhu berbeda", "Bandingkan dengan tabel spesifikasi", "Ganti sensor jika nilai abnormal"]
+                },
+                {
+                    code: "13",
+                    title: "Coolant Temperature Sensor (CTS)",
+                    category: "Sensor",
+                    cause: "Sensor suhu coolant mesin bermasalah",
+                    solution: ["Periksa level coolant mesin", "Cek konektor sensor CTS", "Ukur resistansi sensor (sesuai suhu)", "Ganti sensor jika rusak"]
+                },
+                {
+                    code: "14",
+                    title: "Throttle Position Sensor (TPS)",
+                    category: "Sensor",
+                    cause: "Sensor posisi throttle tidak terkalibrasi atau rusak",
+                    solution: ["Kalibrasi ulang TPS menggunakan diagnostic tool", "Periksa konektor sensor", "Cek tegangan idle dan WOT", "Ganti TPS jika output tidak linear"]
+                },
+                {
+                    code: "31",
+                    title: "Injector Circuit",
+                    category: "Injektor",
+                    cause: "Rangkaian injektor bermasalah atau injektor mampet",
+                    solution: ["Periksa konektor injektor", "Ukur resistansi injektor (10-16 ohm)", "Bersihkan injektor dengan ultrasonic", "Ganti injektor jika tetap mampet"]
+                },
+                {
+                    code: "41",
+                    title: "Ignition Coil Primary",
+                    category: "Pengapian",
+                    cause: "Koil pengapian primer rusak atau short",
+                    solution: ["Ukur resistansi koil primer (0.5-1.5 ohm)", "Periksa konektor koil", "Cek kabel dari ECU ke koil", "Ganti koil jika rusak"]
+                },
+                {
+                    code: "51",
+                    title: "Fuel Pressure Low",
+                    category: "Fuel System",
+                    cause: "Tekanan bahan bakar terlalu rendah",
+                    solution: ["Cek pompa bensin apakah bekerja", "Periksa filter bensin tersumbat", "Ukur tekanan fuel (2.5-3.0 bar)", "Ganti pompa atau filter jika perlu"]
+                }
+            ]
+        };
+
+        // User State
+        let currentUser = null;
+        let userPlan = 'free'; // free, pro, enterprise
+        let favorites = [];
+        let currentBrand = '';
+        let currentFilter = 'all';
+        let searchCount = 0;
+        const dailySearchLimit = 10;
+
+        // Initialize
+        function init() {
+            loadUserFromStorage();
+            updateUIBasedOnAuth();
+            loadFavoritesFromStorage();
+            
+            // Hide splash screen after loading
+            setTimeout(() => {
+                document.getElementById('splash-screen').style.display = 'none';
+            }, 3000);
+        }
+
+        // Load user from localStorage
+        function loadUserFromStorage() {
+            const savedUser = localStorage.getItem('arvianUser');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                userPlan = currentUser.plan || 'free';
+            }
+        }
+
+        // Update UI based on authentication
+        function updateUIBasedOnAuth() {
+            const userSection = document.getElementById('user-section');
+            
+            if (currentUser) {
+                userSection.innerHTML = `
+                    <div class="user-info">
+                        <div class="user-avatar">${currentUser.name.charAt(0).toUpperCase()}</div>
+                        <div>
+                            <div style="font-weight: 600; font-size: 0.9rem;">${currentUser.name}</div>
+                            ${userPlan !== 'free' ? `<span class="premium-badge">${userPlan}</span>` : ''}
+                        </div>
+                        <button class="theme-toggle" onclick="logout()" title="Logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                `;
+            } else {
+                userSection.innerHTML = `
+                    <button class="theme-toggle" onclick="openAuthModal()">
+                        <i class="fas fa-user"></i> Masuk
+                    </button>
+                `;
+            }
+        }
+
+        // Auth Modal Functions
+        function openAuthModal() {
+            document.getElementById('auth-modal').classList.add('active');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('auth-modal').classList.remove('active');
+        }
+
+        function switchAuthTab(tab) {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(`${tab}-form`).classList.add('active');
+        }
+
+        // Handle Login
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Simulate login (in production, call real API)
+            const user = {
+                name: email.split('@')[0],
+                email: email,
+                plan: 'free',
+                loginDate: new Date().toISOString()
+            };
+            
+            currentUser = user;
+            userPlan = user.plan;
+            localStorage.setItem('arvianUser', JSON.stringify(user));
+            
+            closeAuthModal();
+            updateUIBasedOnAuth();
+            showToast('Login berhasil! Selamat datang ' + user.name);
+        }
+
+        // Handle Register
+        function handleRegister(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            
+            if (password.length < 6) {
+                showToast('Password minimal 6 karakter');
+                return;
+            }
+            
+            // Simulate registration (in production, call real API)
+            const user = {
+                name: name,
+                email: email,
+                plan: 'free',
+                registerDate: new Date().toISOString()
+            };
+            
+            currentUser = user;
+            userPlan = user.plan;
+            localStorage.setItem('arvianUser', JSON.stringify(user));
+            
+            closeAuthModal();
+            updateUIBasedOnAuth();
+            showToast('Registrasi berhasil! Selamat datang ' + name);
+        }
+
+        // Logout
+        function logout() {
+            if (confirm('Yakin ingin keluar?')) {
+                currentUser = null;
+                userPlan = 'free';
+                localStorage.removeItem('arvianUser');
+                updateUIBasedOnAuth();
+                showToast('Anda telah keluar');
+                switchPage('home-page');
+            }
+        }
+
+        // Subscribe to premium
+        function subscribe(plan) {
+            if (!currentUser) {
+                openAuthModal();
+                showToast('Silakan login terlebih dahulu');
+                return;
+            }
+            
+            // Simulate payment (in production, integrate payment gateway)
+            const prices = {
+                pro: 'Rp 99.000',
+                enterprise: 'Rp 299.000'
+            };
+            
+            if (confirm(`Berlangganan paket ${plan.toUpperCase()} dengan harga ${prices[plan]}/bulan?`)) {
+                currentUser.plan = plan;
+                userPlan = plan;
+                localStorage.setItem('arvianUser', JSON.stringify(currentUser));
+                updateUIBasedOnAuth();
+                showToast(`Selamat! Anda sekarang pengguna ${plan.toUpperCase()}`);
+                switchPage('home-page');
+            }
+        }
+
+        // Get error codes based on user plan
+        function getErrorCodes(brand) {
+            if (userPlan === 'free') {
+                return errorCodesBasic[brand] || [];
+            } else {
+                return errorCodesPremium[brand] || [];
+            }
+        }
+
+        // Check if feature is available
+        function checkFeatureAccess(feature) {
+            if (!currentUser) {
+                openAuthModal();
+                return false;
+            }
+            
+            const limits = {
+                free: {
+                    dailySearch: 10,
+                    favorites: 3,
+                    fullSolution: false
+                },
+                pro: {
+                    dailySearch: Infinity,
+                    favorites: Infinity,
+                    fullSolution: true
+                },
+                enterprise: {
+                    dailySearch: Infinity,
+                    favorites: Infinity,
+                    fullSolution: true
+                }
+            };
+            
+            return limits[userPlan][feature];
+        }
+
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            const icon = document.querySelector('.theme-toggle i');
+            icon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        if (savedTheme === 'light') {
+            document.querySelector('.theme-toggle i').className = 'fas fa-moon';
+        }
+
+        // Switch Page
+        function switchPage(pageId) {
+            // Check authentication for certain pages
+            if ((pageId === 'favorites-page' || pageId === 'premium-page') && !currentUser) {
+                openAuthModal();
+                return;
+            }
+            
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.closest('.nav-item').classList.add('active');
+            
+            // Load page content
+            if (pageId === 'search-page') {
+                loadSearchPage();
+            } else if (pageId === 'favorites-page') {
+                loadFavoritesPage();
+            }
+        }
+
+        // Load Brand Codes
+        function loadBrandCodes(brand) {
+            if (!currentUser) {
+                openAuthModal();
+                return;
+            }
+            
+            currentBrand = brand;
+            const title = brand === 'honda' ? 'HONDA PGM-FI' : 'YAMAHA FI';
+            document.getElementById('codes-brand-title').textContent = title;
+            
+            renderFilters('codes-filter-container');
+            renderCodesList(brand, 'all');
+            
+            switchPage('codes-page');
+        }
+
+        // Render Filters
+        function renderFilters(containerId) {
+            const categories = ['all', 'Sensor', 'Injektor', 'ECU', 'Pengapian', 'Fuel System', 'Aktuator'];
+            const container = document.getElementById(containerId);
+            
+            container.innerHTML = categories.map(cat => `
+                <button class="filter-btn ${cat === 'all' ? 'active' : ''}" onclick="filterCodes('${cat}')">
+                    ${cat === 'all' ? 'Semua' : cat}
+                </button>
+            `).join('');
+        }
+
+        // Filter Codes
+        function filterCodes(category) {
+            currentFilter = category;
+            
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            renderCodesList(currentBrand, category);
+        }
+
+        // Render Codes List
+        function renderCodesList(brand, filter) {
+            const codes = getErrorCodes(brand);
+            const filteredCodes = filter === 'all' 
+                ? codes 
+                : codes.filter(code => code.category === filter);
+            
+            const container = document.getElementById('codes-list');
+            
+            if (filteredCodes.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-inbox"></i>
+                        <h3>Tidak Ada Kode</h3>
+                        <p>Tidak ada kode error di kategori ini</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = filteredCodes.map(code => renderErrorCard(code, brand)).join('');
+        }
+
+        // Render Error Card
+        function renderErrorCard(code, brand) {
+            const isFavorite = favorites.some(fav => fav.code === code.code && fav.brand === brand);
+            const detailId = `detail-${brand}-${code.code}`;
+            const isPremium = code.premium && userPlan === 'free';
+            
+            return `
+                <div class="error-card ${isPremium ? 'premium-lock' : ''}">
+                    ${isPremium ? `
+                        <div class="premium-overlay">
+                            <i class="fas fa-crown"></i>
+                            <h3>Konten Premium</h3>
+                            <p>Upgrade untuk akses solusi lengkap</p>
+                            <button class="upgrade-btn" onclick="switchPage('premium-page')">
+                                <i class="fas fa-crown"></i> Upgrade Sekarang
+                            </button>
+                        </div>
+                    ` : ''}
+                    <div class="error-code-header">
+                        <div class="error-code-number">${code.code}</div>
+                        <button class="favorite-btn ${isFavorite ? 'active' : ''}" 
+                                onclick="toggleFavorite('${brand}', '${code.code}')">
+                            <i class="fas fa-star"></i>
+                        </button>
+                    </div>
+                    <h4 class="error-title">${code.title}</h4>
+                    <span class="error-category">${code.category}</span>
+                    <div class="mt-2">
+                        <button class="btn btn-sm btn-outline-danger" onclick="toggleDetails('${detailId}')">
+                            <i class="fas fa-chevron-down"></i> Lihat Detail
+                        </button>
+                    </div>
+                    <div class="error-details" id="${detailId}">
+                        <div class="detail-section">
+                            <div class="detail-label">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Penyebab
+                            </div>
+                            <div class="detail-content">${code.cause}</div>
+                        </div>
+                        <div class="detail-section">
+                            <div class="detail-label">
+                                <i class="fas fa-tools"></i>
+                                Solusi & Langkah Pengecekan
+                            </div>
+                            <div class="detail-content">
+                                <ul>
+                                    ${code.solution.map(step => `<li>${step}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Toggle Details
+        function toggleDetails(detailId) {
+            const details = document.getElementById(detailId);
+            const button = event.target.closest('button');
+            const icon = button.querySelector('i');
+            
+            details.classList.toggle('expanded');
+            
+            if (details.classList.contains('expanded')) {
+                icon.className = 'fas fa-chevron-up';
+                button.innerHTML = '<i class="fas fa-chevron-up"></i> Sembunyikan';
+            } else {
+                icon.className = 'fas fa-chevron-down';
+                button.innerHTML = '<i class="fas fa-chevron-down"></i> Lihat Detail';
+            }
+        }
+
+        // Toggle Favorite
+        function toggleFavorite(brand, code) {
+            if (!currentUser) {
+                openAuthModal();
+                return;
+            }
+            
+            const favoriteLimit = checkFeatureAccess('favorites');
+            const existingIndex = favorites.findIndex(fav => fav.code === code && fav.brand === brand);
+            
+            if (existingIndex > -1) {
+                favorites.splice(existingIndex, 1);
+                showToast('Dihapus dari favorit');
+            } else {
+                if (favoriteLimit !== Infinity && favorites.length >= favoriteLimit) {
+                    showToast(`Limit favorit untuk paket ${userPlan}: ${favoriteLimit} kode`);
+                    switchPage('premium-page');
+                    return;
+                }
+                
+                const errorData = getErrorCodes(brand).find(err => err.code === code);
+                favorites.push({ brand, ...errorData });
+                showToast('Ditambahkan ke favorit');
+            }
+            
+            saveFavoritesToStorage();
+            event.target.closest('.favorite-btn').classList.toggle('active');
+        }
+
+        // Load favorites from storage
+        function loadFavoritesFromStorage() {
+            const saved = localStorage.getItem('arvianFavorites');
+            if (saved) {
+                favorites = JSON.parse(saved);
+            }
+        }
+
+        // Save favorites to storage
+        function saveFavoritesToStorage() {
+            localStorage.setItem('arvianFavorites', JSON.stringify(favorites));
+        }
+
+        // Load Search Page
+        function loadSearchPage() {
+            if (!currentUser) {
+                openAuthModal();
+                return;
+            }
+            
+            renderFilters('filter-container');
+            
+            const searchInput = document.getElementById('search-input');
+            searchInput.value = '';
+            searchInput.focus();
+            
+            searchInput.addEventListener('input', performSearch);
+            
+            document.getElementById('search-results').innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-search"></i>
+                    <h3>Cari Kode Error</h3>
+                    <p>Ketik kode atau nama komponen untuk mencari</p>
+                </div>
+            `;
+        }
+
+        // Perform Search
+        function performSearch() {
+            const query = event.target.value.toLowerCase().trim();
+            
+            if (query.length === 0) {
+                document.getElementById('search-results').innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-search"></i>
+                        <h3>Cari Kode Error</h3>
+                        <p>Ketik kode atau nama komponen untuk mencari</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Check search limit for free users
+            const dailyLimit = checkFeatureAccess('dailySearch');
+            if (dailyLimit !== Infinity && searchCount >= dailyLimit) {
+                document.getElementById('search-results').innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-crown"></i>
+                        <h3>Limit Pencarian Tercapai</h3>
+                        <p>Anda telah mencapai limit ${dailyLimit} pencarian hari ini</p>
+                        <button class="upgrade-btn mt-3" onclick="switchPage('premium-page')">
+                            Upgrade ke Premium
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+            
+            searchCount++;
+            
+            const allCodes = [
+                ...getErrorCodes('honda').map(code => ({ ...code, brand: 'honda' })),
+                ...getErrorCodes('yamaha').map(code => ({ ...code, brand: 'yamaha' }))
+            ];
+            
+            const results = allCodes.filter(code => 
+                code.code.toLowerCase().includes(query) ||
+                code.title.toLowerCase().includes(query) ||
+                code.category.toLowerCase().includes(query)
+            );
+            
+            const container = document.getElementById('search-results');
+            
+            if (results.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-search-minus"></i>
+                        <h3>Tidak Ditemukan</h3>
+                        <p>Tidak ada kode yang cocok dengan pencarian "${query}"</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = `
+                <h3 class="mb-3">Hasil Pencarian (${results.length})</h3>
+                ${results.map(code => renderErrorCard(code, code.brand)).join('')}
+            `;
+        }
+
+        // Load Favorites Page
+        function loadFavoritesPage() {
+            const container = document.getElementById('favorites-list');
+            
+            if (favorites.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-star"></i>
+                        <h3>Belum Ada Favorit</h3>
+                        <p>Tandai kode error yang sering Anda gunakan</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = favorites.map(code => renderErrorCard(code, code.brand)).join('');
+        }
+
+        // Show Toast Notification
+        function showToast(message) {
+            const container = document.querySelector('.toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'slideInRight 0.3s ease reverse';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Initialize app
+        init();
+    </script>
+</body>
+</html>
